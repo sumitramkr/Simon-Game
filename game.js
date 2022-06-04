@@ -32,7 +32,12 @@ function checkAnswer (currentLevel) {
     }
 
     else {
-        console.log("lost");
+        var audio1 = new Audio("sounds/wrong.mp3");
+        audio1.play();
+        $("body").addClass("game-over");
+        setTimeout(function() {
+            $("body").removeClass("game-over");
+        }, 300);
     }
 
 }
